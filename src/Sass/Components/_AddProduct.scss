@@ -1,0 +1,13 @@
+.AddProduct {
+	max-width: 1000px;
+	margin: 0 auto;
+	width: 100%;
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		input[type="number"] {
+			align-self: flex-start;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+.APP {
+	padding: 20px;
+	.APP-wrapper {
+		display: grid;
+		grid-template-columns: 1fr;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
