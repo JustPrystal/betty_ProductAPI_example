@@ -46,7 +46,10 @@ class API {
 				const docRef = await addDoc(colRef, data);
 				if (Image) {
 					const DocID = (await getDoc(docRef)).id;
-					await this.setProductImageValue(DocID, await this.addImage());
+					await this.setProductImageValue(
+						DocID,
+						await this.addImage(Image, DocID)
+					);
 				}
 				res(true);
 			} catch (error) {
@@ -59,7 +62,7 @@ class API {
 	deleteProduct(id) {
 		return new Promise(async (res, rej) => {
 			try {
-				this.updateProduct(id, { stats: "deleted" });
+				this.updateProduct(id, { status: "deleted" });
 				res(true);
 			} catch (error) {
 				console.log(error);
@@ -99,7 +102,7 @@ class API {
 					{ merge: true }
 				);
 				if (Image) {
-					await this.setProductImageValue(id, await this.addImage());
+					await this.setProductImageValue(id, await this.addImage(Image, id));
 				}
 				res(true);
 			} catch (error) {
