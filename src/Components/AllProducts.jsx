@@ -35,11 +35,11 @@ const AllProducts = () => {
 								<img src={x.image} alt="PRODUCT_IMAGE" />
 							</div>
 							<div className="content">
-								<div className="name">{x.name}</div>
-								<div className="price">price: {x.price}</div>
+								<div className="name">{x.heading}</div>
+								<div className="price">Category: {x.category}</div>
 								<div className="description">{x.description}</div>
 								<div className="actions">
-									<button onClick={() => mutate(x.id)}>delete</button>
+									<button onClick={() => mutate(x.id)}>Delete Product</button>
 								</div>
 							</div>
 						</div>
