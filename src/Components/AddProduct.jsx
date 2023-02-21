@@ -51,6 +51,13 @@ const AddProduct = () => {
 					placeholder="Product ShortDescription"
 				/>
 				<input
+                    onChange={UpdateValue}
+                    type="text"
+                    name="macros"
+                    value={Data.macros}
+                    placeholder="Product Macros"
+                />
+				<input
 					onChange={UpdateValue}
 					type="text"
 					name="serving"
@@ -117,6 +124,7 @@ const DefaultProject = {
 	subHeading: "",
 	shortDescription: "",
 	ingredients: [],
+	macros:"",
 	serving: "",
 	time: "",
 	calories: "",
